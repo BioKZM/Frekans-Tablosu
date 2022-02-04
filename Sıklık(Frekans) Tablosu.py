@@ -52,13 +52,14 @@ while i <= k:
     #   Burada yaptığımız işlem tam olarak şu; `out.txt` içerisine yazdıracağımız
     #   değerlerin düzgün olarak görüntülenmesini istiyoruz. Bu sebepten, değerlerin
     #   noktadan sonra sadece iki basamağını gözükmesini istiyoruz. Böylece `round()`
-    #   fonksiyonunu kullanıyoruz ve değerlerin yeni halini, orjinal halleriyle değiştiriyoruz.
+    #   fonksiyonunu kullanarak, sayıları yuvarlıyoruz ve değerlerin yeni halini, 
+    #   orjinal halleriyle değiştiriyoruz.
     enkucuk = round(enkucuk,2)
     enkucuk2 = round(enkucuk2,2)
     orta = round(orta,2)
     goreliFrekans=round(float(frekans/uzunluk),2) 
 
-    #   Yukarıda oluşturduğumuz listenin içerisine, ileride .txt  dosyasına yazdırabilmek  için, değerleri ekliyoruz. 
+    #   Yukarıda oluşturduğumuz listenin içerisine, ileride `out.txt` dosyasına yazdırabilmek için, değerleri ekliyoruz. 
     liste.append(("{0:.2f}  {1:.2f}  {2:.2f}    {3}           {4:.2f}".format(enkucuk,enkucuk2,orta,frekans,goreliFrekans)))
 
     #   Döngünün sonuna yaklaştığımızda, diğer sınıfın alt sınırı bulabilmek için,
@@ -77,9 +78,10 @@ ortalama = toplam/uzunluk
 
 #   Burada, medyan değerimizi bulmaya çalışıyoruz. Eğer uzunluk çift sayıysa,
 #   ortadaki değerin ve onun bir fazlasının ortalamasını alarak ve listedeki 
-#   o değeri kontrol ederekmedyanı bulmuş oluyoruz.
+#   o değeri kontrol ederek medyanı bulmuş oluyoruz.
 if uzunluk%2 == 0:
     medyan = (float((data[int(uzunluk/2)])) + float(data[(int(uzunluk/2))+1]))/2
+    
 #   Eğer uzunluk tek sayıysa, direkt uzunluğun yarısını alıp listede o değeri kontrol
 #   ederek medyanı bulmuş oluyoruz.
 else:
